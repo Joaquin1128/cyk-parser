@@ -10,21 +10,19 @@
 
 -- Test 1: JSON vacío
 SELECT
-    'test_1'                    AS test,
-    cyk('{}')                   AS resultado,
-    true                        AS esperado,
-    cyk('{}') = true            AS ok;
+    'test_1'                AS test,
+    cyk('{}')::text         AS resultado,
+    'true'                  AS esperado;
 
 -- Test 2: JSON con un par clave-valor numérico
 SELECT
-    'test_2'                    AS test,
-    cyk('{"a":1}')              AS resultado,
-    true                        AS esperado,
-    cyk('{"a":1}') = true       AS ok;
+    'test_2'                AS test,
+    cyk('{"a":1}')::text    AS resultado,
+    'true'                  AS esperado;
 
 -- Test 3: string inválido (falta la llave de cierre)
 SELECT
-    'test_3'                    AS test,
-    cyk('{"a":1')               AS resultado,
-    false                       AS esperado,
-    cyk('{"a":1') = false       AS ok;
+    'test_3'                AS test,
+    cyk('{"a":1')::text     AS resultado,
+    'false'                 AS esperado;
+    

@@ -51,5 +51,3 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- SELECT print_matriz_cyk(); -- Use function
-
-
