@@ -18,10 +18,9 @@ BEGIN
     RAISE NOTICE '%', glc_output;
 END;
 $$ LANGUAGE plpgsql;
+-- SELECT print_glc_fnc(); -- Use function
 
 -- Print matriz CYK
-ORDER BY i ASC, j ASC;
-
 CREATE OR REPLACE FUNCTION print_matriz_cyk() RETURNS VOID AS $$
 DECLARE
  fila_i int;
@@ -51,6 +50,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
+-- SELECT print_matriz_cyk(); -- Use function
 
 
